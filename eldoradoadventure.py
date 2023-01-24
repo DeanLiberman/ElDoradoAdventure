@@ -28,6 +28,9 @@ def eastroom():
         next = raw_input("> ")
         if "0" in next or "1" in next or "2" in next or "3" in next or "4" in next or "5" in next or "6" in next or "7" in next or "8" in next or "9" in next:
             how_much = int(next)
+        else: 
+            print "Mysterious laughter rings out."
+            eastroom()
         
         if how_much != 36:
             print "You should have read the sign!"
@@ -52,6 +55,8 @@ def eastroom():
         eastroom()
     elif decision == "GO BACK WEST" or decision == "Go back west" or decision == "go back west.":
         centerroom()
+    else:
+        eastroom()
         
 
 
@@ -73,6 +78,9 @@ def centerroom():
         westroom()
     if direction == "GO EAST" or direction == "Go East" or direction == "go east":
         eastroom()
+    else:   
+        centerroom()
+        
         
 def westroom():
     print "You arrive in the western room, to find nothing but a DISCARDED PLACARD lying on"
@@ -110,6 +118,8 @@ def northroom():
         return northroom()
     elif decision == "GO BACK SOUTH" or decision == "go back south" or decision == "Go Back South":
         centerroom()
+    else:
+        northroom()
     
 def southroom():
     wronganswers = 0
@@ -131,8 +141,11 @@ def southroom():
     if decision == "BACK OUT" or decision == "Back Out" or decision == "Back Out":
         print "A giant stone hand grabs you, and tosses you back to the center of the ruins!"
         centerroom()
-    else:
+    elif decision == "STEP FORWARD" or decision == "Step Forward" or decision == "Step Forward":
         print "Very Well Mortal! I hope you are prepared!" 
+    else:   
+         print "Mysterious laughter echoes throughout the room."
+         southroom()
         
 
     print "What is the mortal name of the blonde haired hero in 'The Road to El Dorado?"
